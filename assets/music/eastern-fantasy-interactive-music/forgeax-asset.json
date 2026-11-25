@@ -1,0 +1,85 @@
+{
+  "schema": "forgeax-asset-package/1",
+  "id": "shanye-original-travel-music",
+  "name": "山野来信 · 原创旅途配乐",
+  "version": "1.0.0-original",
+  "source": {
+    "revision": "c585a19c01f1058a5977232cb1f117924e1c586b2efb3ecd0ac31f18f67c33a2",
+    "scope": "complete original three-cue closure"
+  },
+  "entries": [
+    {
+      "path": "packs/journey--normal-ref.pack.ts",
+      "type": "asset"
+    },
+    {
+      "path": "packs/journey--high-ref.pack.ts",
+      "type": "asset"
+    },
+    {
+      "path": "packs/journey--outro.pack.ts",
+      "type": "asset"
+    }
+  ],
+  "engine": {
+    "authored": "0.5.0",
+    "verified": []
+  },
+  "data": {
+    "policy": "strict",
+    "description": "New project-owned composition and local synthesis; no audio samples or model-generated music."
+  },
+  "npmDependencies": {},
+  "vendor": [],
+  "packageDependencies": [],
+  "files": [
+    {
+      "path": "LICENSES.md",
+      "sha256": "28d491d3067373ea174aaefcf061f77275cf30327b65e4b33a764fddef77f54b"
+    },
+    {
+      "path": "SOURCE-PROVENANCE.json",
+      "sha256": "b0c9a4575a4aa6f9eaea9a90a84b961e78959c4eb951882f60b33959e7ee9da2"
+    },
+    {
+      "path": "lib/build.ts",
+      "sha256": "d8f873e933f32231ff25434f5d8e34476e3e622f12e7d20b2fd68a27a785eb27"
+    },
+    {
+      "path": "lib/compositions.mjs",
+      "sha256": "c585a19c01f1058a5977232cb1f117924e1c586b2efb3ecd0ac31f18f67c33a2"
+    },
+    {
+      "path": "lib/render.d.mts",
+      "sha256": "3557974fbdcb4f86f28682668b02e1350ff3785f4279be56e87128a7e2095cc3"
+    },
+    {
+      "path": "lib/render.mjs",
+      "sha256": "8f8ffe6b33521752280f6168b514e7860c4418e0310a5be65760d8af83e2a4bd"
+    },
+    {
+      "path": "lib/shanshui.d.mts",
+      "sha256": "79cf0298c082fb4bc74ad703e65cdcb0ce35ea369719662499abbcf66bfda242"
+    },
+    {
+      "path": "lib/shanshui.mjs",
+      "sha256": "6f331a7dbc5d08050728342d3aa32c12b4f065b397be412004583be979327909"
+    },
+    {
+      "path": "packs/journey--high-ref.pack.ts",
+      "sha256": "94071be443bc3d40880770c9b22f2ae2a80985798d05cbaebc729b350b90b61f"
+    },
+    {
+      "path": "packs/journey--normal-ref.pack.ts",
+      "sha256": "76beae0376bf805576904218498952bb5931a23f7becbae4206c4d8bdc5cc30f"
+    },
+    {
+      "path": "packs/journey--outro.pack.ts",
+      "sha256": "fec00880d36ea57a6cacfd246a78ffe147861c74c57541e83d3856f0cf2e448e"
+    },
+    {
+      "path": "README.md",
+      "sha256": "6f882ed7ed24968344683eed8cc2c68f20c5e7d5b6a3d591320dbcbb6f0fa003"
+    }
+  ]
+}

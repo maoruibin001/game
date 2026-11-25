@@ -1,0 +1,62 @@
+diff --git a/node_modules/@forgeax/engine-devkit/dist/chunk-USPY4QUX.mjs b/node_modules/@forgeax/engine-devkit/dist/chunk-USPY4QUX.mjs
+index fc0e6f2fc36e60843e90eed146cfab47ee03659a..520e3bec76dccb59f26c21ac129aefa2742b1569 100755
+--- a/node_modules/@forgeax/engine-devkit/dist/chunk-USPY4QUX.mjs
++++ b/node_modules/@forgeax/engine-devkit/dist/chunk-USPY4QUX.mjs
+@@ -1186,10 +1186,10 @@ function startupCacheSource(identity) {
+     };
+     return {
+       ready: () => preparation ??= (async () => {
+-        const previous = read('localStorage', key);
+-        if (previous && previous !== version) await refreshHttp();
++        // The entry and its build assets are already versioned. Clearing the
++        // browser HTTP cache can stall even after its response leaves the server.
++        // Reserve that optional operation for recovery from an actual error.
+         await command('prepare', 500);
+-
+       })(),
+       complete: () => {
+         retire();
+@@ -1209,7 +1209,11 @@ function startupCacheSource(identity) {
+           if (complete) return {status: 'disabled'};
+           await command('reset', owner ? 30000 : 500);
+           if (complete) return {status: 'disabled'};
+-          await refreshHttp();
++          try { await refreshHttp(); }
++          catch (error) {
++            if (complete) return {status: 'disabled'};
++            console.warn('[ForgeAX startup] HTTP cache refresh failed; retrying versioned entry.', error);
++          }
+           const modules = [...document.querySelectorAll('script[type=module][src],link[rel=modulepreload][href]')].map(node => node.src || node.href);
+           for (let index = 0; index < modules.length; index += 4) {
+             // These URLs belong to the failed generation. A scoped reset may
+diff --git a/node_modules/@forgeax/engine-devkit/dist/index.mjs b/node_modules/@forgeax/engine-devkit/dist/index.mjs
+index cd29fb5f85200e95f003ecf82ce19aa0fa63c3ee..c449bdc8635e4899bc76f3ee698e8d1983a02b05 100644
+--- a/node_modules/@forgeax/engine-devkit/dist/index.mjs
++++ b/node_modules/@forgeax/engine-devkit/dist/index.mjs
+@@ -6444,10 +6444,10 @@ function startupCacheSource(identity2) {
+     };
+     return {
+       ready: () => preparation ??= (async () => {
+-        const previous = read('localStorage', key);
+-        if (previous && previous !== version) await refreshHttp();
++        // The entry and its build assets are already versioned. Clearing the
++        // browser HTTP cache can stall even after its response leaves the server.
++        // Reserve that optional operation for recovery from an actual error.
+         await command('prepare', 500);
+-
+       })(),
+       complete: () => {
+         retire();
+@@ -6467,7 +6467,11 @@ function startupCacheSource(identity2) {
+           if (complete) return {status: 'disabled'};
+           await command('reset', owner ? 30000 : 500);
+           if (complete) return {status: 'disabled'};
+-          await refreshHttp();
++          try { await refreshHttp(); }
++          catch (error) {
++            if (complete) return {status: 'disabled'};
++            console.warn('[ForgeAX startup] HTTP cache refresh failed; retrying versioned entry.', error);
++          }
+           const modules = [...document.querySelectorAll('script[type=module][src],link[rel=modulepreload][href]')].map(node => node.src || node.href);
+           for (let index = 0; index < modules.length; index += 4) {
+             // These URLs belong to the failed generation. A scoped reset may

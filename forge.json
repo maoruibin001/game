@@ -1,0 +1,15 @@
+{
+  "id": "shanye-laixin",
+  "name": "拍一卷山色",
+  "schemaVersion": "3.0.0",
+  "assetRoots": [
+    "assets"
+  ],
+  "assetLibraries": [
+    "@forgeax/engine/content"
+  ],
+  "roots": {
+    "engine": "bc6c0759-cb56-5904-b826-9c2a87d18554",
+    "frontend": "e0788f73-3c38-5065-9902-b4396e0a2304"
+  }
+}

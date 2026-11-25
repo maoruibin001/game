@@ -1,0 +1,4 @@
+interface:
+  display_name: "游戏体验评审与复验"
+  short_description: "从玩家初次判断定位体验落差，用普通操作和前后实拍复验改动效果"
+  default_prompt: "用 $gameplay-experience-review 评审这段游戏体验，先记录玩家为何犹豫，再做能区分原因的对照，给出最小调整和复验结果。"

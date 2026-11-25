@@ -1,0 +1,47 @@
+{
+  "schema": 2,
+  "title": "山野来信 original travel score",
+  "date": "2026-11-16",
+  "authorship": {
+    "score": "New project composition authored with Codex assistance under the project owner explicit instruction. No pre-existing melody, composition, recording, score or MIDI was used as a composition reference.",
+    "scoreSource": "lib/compositions.mjs",
+    "scoreSha256": "c585a19c01f1058a5977232cb1f117924e1c586b2efb3ecd0ac31f18f67c33a2",
+    "phrases": "Hand-authored note-onset-duration lists and chord voicings, followed by explicitly authored accompaniment placement. Not renamed legacy score data.",
+    "humanRole": "Concept, mood and scope direction, competition objective; final listening acceptance remains with project owner.",
+    "paidAssetModelCalls": 0,
+    "aiChatCost": "not measured; zero asset-model calls does not mean the coding agent was free."
+  },
+  "retainedThirdPartyCode": [
+    {
+      "name": "Shanshui synthesis equations",
+      "upstream": "https://github.com/Leonxlnx/shanshui",
+      "revision": "b5357c0a7dbbadff1692b775432375d5f5447599",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Leonxlnx",
+      "retainedAdapterOriginalSha256": "dd9529b702a7de78b20cbba622ee3c704fe2d6715eb6fa766c90613661b81dd9",
+      "adaptedSourceSha256": "6f331a7dbc5d08050728342d3aa32c12b4f065b397be412004583be979327909",
+      "changes": "One-shot rendering now clips event tails to its non-looping timeline, reads the first synthesized cycle, and does not wrap the ending into the beginning. Instrument equations retained."
+    }
+  ],
+  "removedFromActiveCandidate": [
+    "legacy journey composition",
+    "liyue DSP",
+    "Syrtis DSP",
+    "legacy mystery/sect/battle/tribulation score files",
+    "NumPy vendor random module"
+  ],
+  "legacyArchive": "../history/20261116-pre-original-score/",
+  "stableInterfaces": {
+    "normal": "108c2d7f-5731-580d-acaf-245765729f53",
+    "vista": "c07b05b6-9a31-568d-8cc0-3f1172c7da94",
+    "outro": "c40d4d5b-58b4-571e-a1a9-f6d1a2ed8199"
+  },
+  "validation": {
+    "typecheckEngine050": "passed in staging",
+    "localWaveRendering": "passed",
+    "auditionVerification": "auditions/verification.json",
+    "engineNativeCook": "pending root integration",
+    "normalHostPlayback": "pending root acceptance",
+    "listening": "not claimed"
+  }
+}
